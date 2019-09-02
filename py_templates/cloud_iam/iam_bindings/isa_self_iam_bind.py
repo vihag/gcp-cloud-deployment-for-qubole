@@ -17,15 +17,18 @@ def GenerateConfig(context):
 
     resources = [
         {
-            'name': 'auth-csa-to-isa-svc-acct-usr',
+            'name': 'auth_isa_on_itself',
             'type': 'gcp-types/iam-v1:iam.projects.serviceAccounts.setIamPolicy',
             'properties': {
-                'resource': 'serviceAccount:$(ref.qubole-instance-service-account.email)',
-                'role': 'roles/iam.serviceAccountUser',
-                'member': '$(ref.qubole-instance-service-account)'
-            },
-            'metadata': {
-                'dependsOn': ['$(ref.qubole-instance-service-account)']
+                'resource': 'projects/'+context.env['project']+'/serviceAccounts/'+'$(ref.qubole-instance-service-acc.email)',
+                'policy': {
+                    'bindings': [
+                        {
+                            'role': 'roles/iam.serviceAccountUser',
+                            'members': ['serviceAccount:'+'$(ref.qubole-instance-service-acc.email)']
+                        }
+                    ]
+                }
             }
         }
     ]

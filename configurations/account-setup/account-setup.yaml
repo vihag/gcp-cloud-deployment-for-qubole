@@ -1,26 +1,54 @@
-# Copyright 2016 Google Inc. All rights reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# Permissions Required
+# API [deploymentmanager.googleapis.com]
+# Identity and Access Management (IAM) API
+# Compute API
 
 imports:
-  - path: ./../../py-templates/cloud-iam/roles/custom-compute-role.py
-    name: custom-compute-role.py
-  - path: ./../../py-templates/cloud-iam/roles/custom-storage-role.py
-    name: custom-storage-role.py
-  - path: ./../../py-templates/cloud-iam/service-accounts/custom-compute-role.py
-  - path: firewall-template.py
-  - path: compute-engine-template.py
+  - path: ./../../py_templates/cloud_iam/roles/custom_compute_role.py
+    name: custom_compute_role.py
+  - path: ./../../py_templates/cloud_iam/roles/custom_storage_role.py
+    name: custom_storage_role.py
+  - path: ./../../py_templates/cloud_iam/service_accounts/compute_service_account.py
+    name: compute_service_account.py
+  - path: ./../../py_templates/cloud_iam/service_accounts/instance_service_account.py
+    name: instance_service_account.py
+  - path: ./../../py_templates/cloud_iam/iam_bindings/isa_self_iam_bind.py
+    name: isa_self_iam_bind.py
+  - path: ./../../py_templates/cloud_storage/qubole_defloc/qubole_defloc.py
+    name: qubole_defloc.py
 
 resources:
-  - name: compute-engine-setup
-    type: compute-engine-template.py
+  - name: qu_custom_storage_role
+    type: custom_storage_role.py
+    properties:
+      project: qubole-on-gcp
+      roleId: qubole_custom_storage_role_acc422
+      title: qubole_custom_storage_role
+      description: qubole_custom_storage_role
+  - name: qu_custom_compute_role
+    type: custom_compute_role.py
+    properties:
+      project: qubole-on-gcp
+      roleId: qubole_custom_compute_role_acc422
+      title: qubole_custom_compute_role
+      description: qubole_custom_compute_role
+  - name: qu_compute_service_account
+    type: compute_service_account.py
+    properties:
+      project: qubole-on-gcp
+      accountId: qubole-compute-service-acc
+      displayName: qubole-compute-service-acc
+      qubole-service-account: qbol-422-gcp@prod-qsa-project-1.iam.gserviceaccount.com
+  - name: qu_instance_service_account
+    type: instance_service_account.py
+    properties:
+      project: qubole-on-gcp
+      accountId: qubole-instance-service-acc
+      displayName: qubole-instance-service-acc
+  - name: isa_self_iam_bind
+    type: isa_self_iam_bind.py
+  - name: qubole_default_location
+    type: qubole_defloc.py
+    properties:
+      project: qubole-on-gcp
+      org: vihag_acc422

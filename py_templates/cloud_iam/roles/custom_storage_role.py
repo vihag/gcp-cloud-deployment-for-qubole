@@ -17,15 +17,14 @@ def GenerateConfig(context):
     """Creates the Storage IAM Role."""
 
     resources = [{
-        'name': 'qubole-custom-storage-role',
+        'name': 'qubole_custom_storage_role',
         'type': 'gcp-types/iam-v1:projects.roles',
         'properties': {
-            'parent': context.properties['project'],
+            'parent': 'projects/'+context.env['project'],
             'roleId': context.properties["roleId"],
             'role': {
                 'title': context.properties["title"],
                 'description': context.properties["description"],
-                'stage': context.properties["stage"],
                 'includedPermissions': ['storage.buckets.get','storage.buckets.getIamPolicy','storage.buckets.list','storage.objects.create','storage.objects.delete','storage.objects.get','storage.objects.getIamPolicy','storage.objects.list','storage.objects.setIamPolicy']
             }
 
