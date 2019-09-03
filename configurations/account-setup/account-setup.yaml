@@ -12,8 +12,14 @@ imports:
     name: compute_service_account.py
   - path: ./../../py_templates/cloud_iam/service_accounts/instance_service_account.py
     name: instance_service_account.py
-  - path: ./../../py_templates/cloud_iam/iam_bindings/isa_self_iam_bind.py
-    name: isa_self_iam_bind.py
+  - path: ./../../py_templates/cloud_iam/iam_bindings/auth_csa_isa_on_isa.py
+    name: auth_csa_isa_on_isa.py
+  - path: ./../../py_templates/cloud_iam/iam_bindings/auth_qsa_on_csa.py
+    name: auth_qsa_on_csa.py
+  - path: ./../../py_templates/cloud_iam/iam_bindings/bind_compute_role_to_svc_accounts.py
+    name: bind_compute_role_to_svc_accounts.py
+  - path: ./../../py_templates/cloud_iam/iam_bindings/bind_storage_role_to_svc_accounts.py
+    name: bind_storage_role_to_svc_accounts.py
   - path: ./../../py_templates/cloud_storage/qubole_defloc/qubole_defloc.py
     name: qubole_defloc.py
 
@@ -22,14 +28,14 @@ resources:
     type: custom_storage_role.py
     properties:
       project: qubole-on-gcp
-      roleId: qubole_custom_storage_role_acc422
+      roleId: qubole_custom_storage_role_acc422_6
       title: qubole_custom_storage_role
       description: qubole_custom_storage_role
   - name: qu_custom_compute_role
     type: custom_compute_role.py
     properties:
       project: qubole-on-gcp
-      roleId: qubole_custom_compute_role_acc422
+      roleId: qubole_custom_compute_role_acc422_6
       title: qubole_custom_compute_role
       description: qubole_custom_compute_role
   - name: qu_compute_service_account
@@ -45,10 +51,18 @@ resources:
       project: qubole-on-gcp
       accountId: qubole-instance-service-acc
       displayName: qubole-instance-service-acc
-  - name: isa_self_iam_bind
-    type: isa_self_iam_bind.py
+  - name: auth_csa_isa_on_isa
+    type: auth_csa_isa_on_isa.py
+  - name: auth_qsa_on_csa
+    type: auth_qsa_on_csa.py
+    properties:
+      qubole-service-account: qbol-422-gcp@prod-qsa-project-1.iam.gserviceaccount.com
+  - name: bind_compute_role_to_svc_accounts
+    type: bind_compute_role_to_svc_accounts.py
+  - name: bind_storage_role_to_svc_accounts
+    type: bind_storage_role_to_svc_accounts.py
   - name: qubole_default_location
     type: qubole_defloc.py
     properties:
       project: qubole-on-gcp
-      org: vihag_acc422
+      org: vihag_acc422_6

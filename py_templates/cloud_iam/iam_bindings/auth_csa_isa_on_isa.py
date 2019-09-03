@@ -17,15 +17,15 @@ def GenerateConfig(context):
 
     resources = [
         {
-            'name': 'auth_isa_on_itself',
+            'name': 'auth_csa_isa_on_isa',
             'type': 'gcp-types/iam-v1:iam.projects.serviceAccounts.setIamPolicy',
             'properties': {
-                'resource': 'projects/'+context.env['project']+'/serviceAccounts/'+'$(ref.qubole-instance-service-acc.email)',
+                'resource': 'projects/'+context.env['project']+'/serviceAccounts/'+'$(ref.qubole-instance-service-acc.uniqueId)',
                 'policy': {
                     'bindings': [
                         {
                             'role': 'roles/iam.serviceAccountUser',
-                            'members': ['serviceAccount:'+'$(ref.qubole-instance-service-acc.email)']
+                            'members': ['serviceAccount:'+'$(ref.qubole-instance-service-acc.email)', 'serviceAccount:'+'$(ref.qubole-compute-service-acc.email)']
                         }
                     ]
                 }

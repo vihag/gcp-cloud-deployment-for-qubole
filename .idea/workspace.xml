@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92de7bcb-3ecb-47dd-952b-104c0a16260d" name="Default Changelist" comment="" />
+    <list default="true" id="92de7bcb-3ecb-47dd-952b-104c0a16260d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/configurations/networking-setup/networking-setup.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_svc_accounts_on_defloc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/bind_compute_role_to_svc_accounts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/bind_storage_role_to_svc_accounts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py_templates/compute_engine/bastion_for_qubole/qubole_bastion.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses/qubole_bastion_ext_address.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py_templates/vpc_network/firewall_rules/qubole_bastion_ingress.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/private_subnetwork.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/public_subnetwork.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/qubole_dedicated_vpc_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configurations/account-setup/account-setup.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configurations/account-setup/account-setup.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/isa_self_iam_bind.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_csa_isa_on_isa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/service_accounts/compute_service_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/service_accounts/compute_service_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/service_accounts/instance_service_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/service_accounts/instance_service_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_storage/qubole_defloc/qubole_defloc.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_storage/qubole_defloc/qubole_defloc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/qubole-dedicated-vpc-network.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_qsa_on_csa.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/service-accounts/compute-service-account.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/service-accounts/instance-service-account.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,147 +37,28 @@
       </list>
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/service-accounts/instance-service-account.py" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/service-accounts/compute-service-account.py" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/custom-roles-service-accounts/bind-compute-role-to-csa.py" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/custom-roles-service-accounts/bind-compute-role-to-isa.py" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/custom-roles-service-accounts/bind-storage-role-to-csa.py" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/custom-roles-service-accounts/bind-storage-role-to-isa.py" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/authorize-qubole-on-csa/bind-qsa-to-csa-with-roles.py" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/authorize-csa-on-isa/bind-csa-to-isa-with-roles.py" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/authorize-isa-on-isa/bind-isa-to-isa-with-roles.py" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/roles/custom-compute-role.py" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-iam/roles/custom-storage-role.py" />
-        <option value="$PROJECT_DIR$/py-templates/account-setup.py" />
-        <option value="$PROJECT_DIR$/py-templates/account-setup/account-setup.py" />
-        <option value="$PROJECT_DIR$/configurations/account-setup/account-setup.yaml" />
-        <option value="$PROJECT_DIR$/py-templates/cloud-storage/qubole-defloc/qubole-defloc.py" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
-  <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="configurations" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="configurations" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="account-setup" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cloud-iam" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cloud-iam" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="iam-bindings" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cloud-iam" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="iam-bindings" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="authorize-csa-on-isa" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cloud-iam" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="iam-bindings" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="authorize-isa-on-isa" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cloud-iam" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="iam-bindings" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="authorize-qubole-on-csa" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cloud-iam" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="iam-bindings" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="custom-roles-service-accounts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cloud-iam" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="roles" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cloud-iam" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="service-accounts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cloud-storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="qubole-gcp-cloud-deployment" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="py-templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cloud-storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="qubole-defloc" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-    </panes>
-  </component>
+  <component name="ProjectId" id="1QDfPkdd2gC470JdZxAQoTsXx1s" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/configurations/networking-setup" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/configurations/networking-setup" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/py_templates/vpc_network/networks" />
       <recent name="$PROJECT_DIR$/py-templates/cloud-iam/roles" />
     </key>
   </component>
@@ -213,217 +94,15 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
-    <layout>
-      <window_info id="Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32928064" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/custom-roles-service-accounts/bind-compute-role-to-isa.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/custom-roles-service-accounts/bind-storage-role-to-csa.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/custom-roles-service-accounts/bind-storage-role-to-isa.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="79" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/authorize-isa-on-isa/bind-isa-to-isa-with-roles.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/authorize-qubole-on-csa/bind-qsa-to-csa-with-roles.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/roles/custom-compute-role.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="999" selection-start-line="27" selection-start-column="999" selection-end-line="27" selection-end-column="999" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/account-setup.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/roles/custom-storage-role.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="272" selection-start-line="28" selection-start-column="272" selection-end-line="28" selection-end-column="272" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/account-setup/account-setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/authorize-csa-on-isa/bind-csa-to-isa-with-roles.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="86" selection-start-line="16" selection-start-column="86" selection-end-line="16" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configurations/account-setup/account-setup.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-storage/qubole-defloc/qubole-defloc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="38" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/iam-bindings/custom-roles-service-accounts/bind-compute-role-to-csa.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="87" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/service-accounts/instance-service-account.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/py-templates/cloud-iam/service-accounts/compute-service-account.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Python 3.6 (mlflow) interpreter library</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>Python 3.6 (mlflow)</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

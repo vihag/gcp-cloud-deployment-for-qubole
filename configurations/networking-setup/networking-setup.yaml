@@ -1,0 +1,42 @@
+# Permissions Required
+# API [deploymentmanager.googleapis.com]
+# Identity and Access Management (IAM) API
+# Compute API
+
+imports:
+  - path: ./../../py_templates/compute_engine/bastion_for_qubole/qubole_bastion.py
+    name: qubole_bastion.py
+  - path: ./../../py_templates/vpc_network/external_ip_addresses/qubole_bastion_ext_address.py
+    name: qubole_bastion_ext_address.py
+  - path: ./../../py_templates/vpc_network/firewall_rules/qubole_bastion_ingress.py
+    name: qubole_bastion_ingress.py
+  - path: ./../../py_templates/vpc_network/networks/private_subnetwork.py
+    name: private_subnetwork.py
+  - path: ./../../py_templates/vpc_network/networks/public_subnetwork.py
+    name: public_subnetwork.py
+  - path: ./../../py_templates/vpc_network/networks/qubole_dedicated_vpc_network.py
+    name: qubole_dedicated_vpc_network.py
+
+resources:
+  - name: qubole_bastion
+    type: qubole_bastion.py
+    properties:
+      zone: asia-southeast1-a
+      machineType: f1-micro
+      public_ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCuNs16ilK2zat5dNN6oPqxcD1xYhzZiS1/g7LMYxAO3Bhm712ZR1Uc7LMICLqk8CeI8Ji7g3yqRaHZEkl8YiGS6JAEGOXBMKQdHBQVlyQR8CTiKB4+PxlNQuCjsP/e+mVtS/QwuLno+qTO5HAAcSmgsNNJn4R4zfuRMK7Lo1zv0ZYyxWrRQ/Oo/A8FBEoiNvsPhoG9TBWR4YbLkxWh9hR0TIsCdtMz1TPqBKe7bKg7onHUKIh1vByT8nzzim6F3WBHoeWYnpyuYVcQi2XHWQTVbZ/g/Xi85LsUxfBeggo02pE1WkRufFQ3Aa4ddZJH8b6u5pSIBbt2l7Ay5NZg538v
+  - name: qubole_dedicated_vpc_network
+    type: qubole_dedicated_vpc_network.py
+  - name: qubole_bastion_ext_ip
+    type: qubole_bastion_ext_address.py
+    properties:
+      region: asia-southeast1
+  - name: qubole_bastion_firewall_rules
+    type: qubole_bastion_ingress.py
+  - name: qubole_dedicated_public_subnet
+    type: public_subnetwork.py
+    properties:
+      region: asia-southeast1
+  - name: qubole_dedicated_private_subnet
+    type: private_subnetwork.py
+    properties:
+      region: asia-southeast1

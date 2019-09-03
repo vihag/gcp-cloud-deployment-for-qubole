@@ -25,27 +25,6 @@ def GenerateConfig(context):
                 'accountId': context.properties['accountId'],
                 'displayName': context.properties['displayName']
             },
-
-            'accessControl':{
-                'gcpIAMPolicy': {
-                    'bindings': [
-                        {
-                            'role': '$(ref.qubole_custom_storage_role.selfLink)'
-                        },
-                        {
-                            'role': '$(ref.qubole_custom_compute_role.selfLink)'
-                        },
-                        {
-                            'role': 'roles/iam.serviceAccountUser',
-                            'member': 'serviceAccount:'+context.properties['qubole-service-account']
-                        },
-                        {
-                            'role': 'roles/iam.serviceAccountTokenCreator',
-                            'member': 'serviceAccount:'+context.properties['qubole-service-account']
-                        }
-                    ]
-                }
-            }
         }
     ]
     return {'resources': resources}

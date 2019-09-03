@@ -32,7 +32,7 @@ def GenerateConfig(context):
                 'gcpIAMPolicy': {
                     'bindings': [
                         {
-                            'role': '$(ref.qubole_custom_storage_role)',
+                            'role': '$(ref.qubole_custom_storage_role.selfLink)',
                             'members': ['serviceAccount:$(ref.qubole-compute-service-acc.email)', 'serviceAccount:$(ref.qubole-instance-service-acc.email)']
                         }
                     ]
