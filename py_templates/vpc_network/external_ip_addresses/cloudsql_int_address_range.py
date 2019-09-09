@@ -14,11 +14,10 @@ def GenerateConfig(context):
         'properties': {
             'region': context.properties['region'],
             'purpose': 'VPC_PEERING',
-            'addressType': 'INTERNAL',
             'prefixLength': 24,
+            'addressType': 'INTERNAL',
             'description': 'Dedicated address range for PrivateIP connections to and from Qubole VPC',
             'network': '$(ref.cloud-sql-proxy-vpc.selfLink)',
-            'global': False
         }
     }]
     return {'resources': resources}

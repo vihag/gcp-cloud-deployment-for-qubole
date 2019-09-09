@@ -14,18 +14,35 @@
 
 def GenerateConfig(context):
     """Authorize the ISA with serviceAccountUser and serviceAccountTokenCreator on ISA."""
-#TODO roles/servicenetworking.networksAdmin
-#TODO roles/compute.networkAdmin
+    # TODO create custom roles that don't require full admin for service networking and compute(vpc peering)
+    # TODO wait for service networking to be registered as a gcp type to avoid providing a computeVM with these powers
     resources = [
         {
-            'name': 'bind_cloud_sql_to_proxy_sa_admin',
+            'name': 'auth_cloud_sql_client_to_cloud_sql_proxy_sa',
             'type': 'gcp-types/cloudresourcemanager-v1:virtual.projects.iamMemberBinding',
             'properties': {
                 'resource': context.env['project'],
-                #'role': '$(ref.cloud_sql_connect_role.name)',
                 'role': 'roles/cloudsql.client',
                 'member': 'serviceAccount:$(ref.cloud-sql-proxy-service-acc.email)'
             },
         }
+        # {
+        #     'name': 'auth_svc_networking_to_cloud_sql_proxy_sa',
+        #     'type': 'gcp-types/cloudresourcemanager-v1:virtual.projects.iamMemberBinding',
+        #     'properties': {
+        #         'resource': context.env['project'],
+        #         'role': 'roles/servicenetworking.networksAdmin',
+        #         'member': 'serviceAccount:$(ref.cloud-sql-proxy-service-acc.email)'
+        #     },
+        # },
+        # {
+        #     'name': 'auth_compute_networking_to_cloud_sql_proxy_sa',
+        #     'type': 'gcp-types/cloudresourcemanager-v1:virtual.projects.iamMemberBinding',
+        #     'properties': {
+        #         'resource': context.env['project'],
+        #         'role': 'roles/compute.networkAdmin',
+        #         'member': 'serviceAccount:$(ref.cloud-sql-proxy-service-acc.email)'
+        #     },
+        # }
     ]
     return {'resources': resources}

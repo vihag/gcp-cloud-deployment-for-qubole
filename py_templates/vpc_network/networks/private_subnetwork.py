@@ -18,7 +18,8 @@ def GenerateConfig(context):
             'network': '$(ref.qubole-dedicated-vpc.selfLink)',
             'ipCidrRange': '10.3.0.0/24',
             'region': context.properties['region'],
-            'privateIpGoogleAccess': True,
+            # TODO enable this once Serivce Networking API is supported by GCP DM
+            #'privateIpGoogleAccess': True,
             'enableFlowLogs': False
         }
     }]

@@ -6,7 +6,7 @@
 
 """Creates the bastion host for Qubole."""
 
-def getBootstrapAsArray(public_ssh_key):
+def getBootstrapAsArray(public_ssh_key, qubole_public_key):
 
     return ''.join([
         '#!/bin/bash\n',
@@ -14,6 +14,7 @@ def getBootstrapAsArray(public_ssh_key):
         'mkdir -p /home/bastion-user/.ssh\n',
         'chown -R bastion-user:bastion-user /home/bastion-user/.ssh\n',
         'bash -c \'echo "'+public_ssh_key+'" >> /home/bastion-user/.ssh/authorized_keys\'\n'
+        'bash -c \'echo "'+qubole_public_key+'" >> /home/bastion-user/.ssh/authorized_keys\'\n'
         'bash -c \'echo "GatewayPorts yes" >> /etc/ssh/sshd_config\'\n',
         'sudo service ssh restart\n'
     ])
@@ -55,7 +56,7 @@ def GenerateConfig(context):
             'metadata': {
                 'items': [{
                     'key': 'startup-script',
-                    'value': ''+getBootstrapAsArray(context.properties['public_ssh_key'])
+                    'value': ''+getBootstrapAsArray(context.properties['public_ssh_key'], context.properties['qubole_public_key'])
                 }]
             }
         }
