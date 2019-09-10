@@ -1,12 +1,14 @@
-# The VPC dedicated for Qubole should have an address range dedicated for PrivateIP
+# Creates a Static Global IP address range for
+# 1. The Cloud SQL Instance to use when peering with the Cloud SQL Proxy VPC
 #
-# See https://cloud.google.com/vpc/docs/configure-private-services-access
-# See sudo gcloud compute addresses delete google-managed-services-qubole-dedicated-vpc --global for deleting global addresses
+# This is for the following reason:
+# 1. When Service Peering, the service creates a new project, VPC and subnetwork. The IP range for the subnetwork is this Global IP address range
+# 2. Allocating an address range ensures that there are no IP range conflicts between the service providers network and service consumers network
 
-"""Creates the dedicated address range for PrivateIP connections to and from Qubole VPC."""
+"""Creates the dedicated address range for PrivateIP connections to and from Cloud SQL Proxy VPC."""
 
 def GenerateConfig(context):
-    """Creates the dedicated address range for PrivateIP connections to and from Qubole VPC."""
+    """Creates the dedicated address range for PrivateIP connections to and from Cloud SQL Proxy VPC."""
 
     resources = [{
         'name': 'cloudsql-int-address-range',

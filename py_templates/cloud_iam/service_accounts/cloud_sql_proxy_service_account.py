@@ -1,13 +1,10 @@
-# Qubole Orchestrates Compute Engine VMs on the customer's behalf into "clusters"
+# Creates a Service Account that
+# 1. will be attached to the GCE/GKE hosting the Cloud SQL Proxy
+# 2. will provide the Cloud SQL Proxy service with credentials to connect to the Cloud SQL instance hosting the Hive Metastore
 #
-# To create and launch "Clusters", Qubole requires Compute IAM credentials
-# This deployment template creates a "Compute Service Account" that can be passed to Qubole
-#
-# SA Templates - https://github.com/GoogleCloudPlatform/deploymentmanager-samples/blob/master/examples/v2/project_creation/service-accounts.py
-# Env/Custom Variables - https://cloud.google.com/deployment-manager/docs/configuration/templates/use-environment-variables
-# SA REST Reference - https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts
-# IAM Bindings to add roles: https://stackoverflow.com/a/55961393/7194982
-# Making references in templates: https://cloud.google.com/deployment-manager/docs/configuration/use-references?hl=ru#making_references_in_templates
+# This is for the following reason:
+# 1. The Cloud SQL Proxy service uses the credentials of the service account associated with its host(GCE/GKE) to connect to the Cloud SQL instance
+# 2. Using the Service Account is a clean and safe way to restrict the credentials to this one process
 
 
 """Creates the Service Account to be used by the Cloud SQL Proxy to create a Gateway to the Cloud SQL with Hive Metastore."""

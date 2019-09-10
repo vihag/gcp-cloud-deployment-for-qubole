@@ -4,15 +4,21 @@
 # Authorizes the Instance Service Account with
 # 1. Big Query Read Session User Role
 #
-# This is required so that once Qubole can
-# 1. Show Big Query Datasets in the Workbench UI
-# 2. Perform Data Preview on Big Query Datasets in the Workbench UI
-# 3. Allow Spark Clusters to read data from Big Query
+# This is for the following reason:
+# 1. The workbench UI uses the Compute Service Account to list the available Big Query Datasets
+# 2. The workbench UI uses the Compute Service Account to provide data preview on the available Big Query Datasets
+# 3. The Spark Clusters(via the Notebook and Workbench) uses the Instance Service Account to read Big Query Datasets
 #
-# References
-# https://github.com/GoogleCloudPlatform/deploymentmanager-samples/issues/94
-# https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts/setIamPolicy
-# https://cloud.google.com/iam/reference/rest/v1/Policy
+# Caveats
+# 1. It is the customers responsibility to authorize the Instance Service Account as a Data Viewer on the Individual Big Query Datasets
+# 2. This is because(as per docs):
+#                               When applied to a dataset, dataViewer provides permissions to:
+#                                   i. Read the dataset's metadata and to list tables in the dataset.
+#                                   ii. Read data and metadata from the dataset's tables.
+#                               When applied at the project or organization level, this role can also
+#                                   i. enumerate all datasets in the project.
+#                                   ii. Additional roles, however, are necessary to allow the running of jobs.
+
 
 """Authorizes the Instance Service Account as a Big Query Read Session User. Authorizes the Compute Service Account as a Big Query Data Viewer"""
 

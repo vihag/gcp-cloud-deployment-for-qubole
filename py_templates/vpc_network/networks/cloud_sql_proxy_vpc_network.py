@@ -1,9 +1,10 @@
-# Cloud SQL cannot whitelist Internal Networks(Subnets of VPC Networks)
-# Hence to be able to connect to different VPCs, the Cloud SQL must sit behing a Cloud SQL Proxy
-# This VPC will host the Cloud SQL Proxy
+# Creates a VPC designated to host the Cloud SQL Proxy Process
 #
-# References
-# Connecting from External Applications: https://cloud.google.com/sql/docs/mysql/external-connection-methods
+# This is for the following reason:
+# 1. This VPC will be Private IP peered with the Cloud SQL instance for security reasons
+# 2. This VPC will be able to use Private IP peering
+#
+# Cloud SQL Proxy is required in a scalable architecture. Please see Connecting from External Applications: https://cloud.google.com/sql/docs/mysql/external-connection-methods
 
 """Creates the network."""
 

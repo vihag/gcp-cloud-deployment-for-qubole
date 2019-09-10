@@ -1,16 +1,14 @@
-# Create a notional public subnetwork which will host a bastion host
+# Creates a SubNetwork in the Qubole Dedicated VPC.
+# 1. This will be the notional public subnetwork in which a Bastion Host will reside
 #
-# The bastion host will be Qubole's gateway into the private subnetwork
-# This way we can have an additional layer of firewall security through which even Qubole has limited access
-# The rest of the world will have now way of accessing the private subnetwork
-#
-# References https://github.com/GoogleCloudPlatform/deploymentmanager-samples/blob/master/community/cloud-foundation/templates/network/subnetwork.py.schema
+# This is for the following reason:
+# 1. The Bastion host is the secure gateway through which Qubole will talk to the clusters running in the customer's project/network
 
 """ Create a sub-network that will act as the public sub-network hosting the bastion host in the Qubole dedicated VPC. """
 
 
 def GenerateConfig(context):
-    """Creates the network."""
+    """ Create a sub-network that will act as the public sub-network hosting the bastion host in the Qubole dedicated VPC. """
 
     resources = [{
         'name': 'qu-vpc-public-subnetwork',

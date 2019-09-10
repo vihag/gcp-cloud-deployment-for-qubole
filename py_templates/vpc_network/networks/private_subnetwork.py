@@ -1,15 +1,14 @@
-# Create a notional private subnetwork which will host Qubole Spark/Hive/Airflow
+# Creates a SubNetwork in the Qubole Dedicated VPC.
+# 1. This will be the notional private subnetwork in which Qubole will launch clusters without External IP
 #
-# The bastion host in the public subnetwork will be Qubole's gateway into the private subnetwork
-# The private subnetwork is protected by firewall rules which default to deny everything
-#
-# References https://github.com/GoogleCloudPlatform/deploymentmanager-samples/blob/master/community/cloud-foundation/templates/network/subnetwork.py.schema
+# This is for the following reason:
+# 1. Not having internet access can be an important security requirment
 
 """ Create a sub-network that will act as the private sub-network hosting the clusters in the Qubole dedicated VPC. """
 
 
 def GenerateConfig(context):
-    """Creates the network."""
+    """ Create a sub-network that will act as the private sub-network hosting the clusters in the Qubole dedicated VPC. """
 
     resources = [{
         'name': 'qu-vpc-private-subnetwork',

@@ -1,19 +1,14 @@
-# Authorize Compute Service Account and Instance Service Account to use
-# 1. Qubole Custom Compute Role
+# Authorizes the Compute Service Account & Instance Service account (created for Qubole) with
+# 1. A custom compute role that allows the Service Account to manage VMs for orchestrating clusters
 #
-#
-# This is required so that once Qubole can use this role and its permissions to work with the compute engine in the customers GCP org,
-#
-# References
-# https://github.com/GoogleCloudPlatform/deploymentmanager-samples/issues/94
-# https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts/setIamPolicy
-# https://cloud.google.com/iam/reference/rest/v1/Policy
-# https://github.com/GoogleCloudPlatform/cloud-foundation-toolkit/blob/master/dm/templates/iam_member/iam_member.py
+# This is for the following reason:
+# 1. Qubole uses the Compute and Instance Service Accounts to perform Complete Cluster LifeCycle Management and Autoscaling. This requires Compute Permissions
 
-"""Authorizes the Instance Service Account as a user to the Instance Service Account."""
+
+"""Authorizes the Compute Service Account and Instance Service Account to be able to use the Custom Compute Role."""
 
 def GenerateConfig(context):
-    """Authorize the ISA with serviceAccountUser and serviceAccountTokenCreator on ISA."""
+    """Authorizes the Compute Service Account and Instance Service Account to be able to use the Custom Compute Role."""
 
     resources = [
         {

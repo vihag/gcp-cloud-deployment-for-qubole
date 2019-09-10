@@ -1,13 +1,13 @@
-# Qubole Orchestrates Compute Engine VMs on the customer's behalf into "clusters"
+# Creates a Custom Role to work with Compute Engine to
+# 1. Handle Compute resources like VMs, Disks, Addresses etc
+# 2. Handle Network resources like firewalls and list VPCs
 #
-# To create and launch "Clusters", Qubole requires Compute IAM credentials
-# This deployment template creates a "Compute Role" that can be passed to Qubole
+# This is for the following reason:
+# 1. Qubole uses the custom Compute Role to list networks, create vms, create addresses, tag instances and pass IAM service accounts to other instances
 #
-# It is important to not be more restrictive than the permissions listed in this template
-#
-# Role Templates - https://cloud.google.com/iam/docs/maintain-custom-roles-deployment-manager
-# Env/Custom Variables - https://cloud.google.com/deployment-manager/docs/configuration/templates/use-environment-variables
-#
+# Caveats:
+# 1. The customer should ensure that the listed permissions are not taken away as it might result in loss of functionality
+
 
 
 """Creates the Compute IAM Role to be used by Qubole to create and launch clusters."""

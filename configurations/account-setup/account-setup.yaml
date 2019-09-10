@@ -10,8 +10,6 @@ imports:
     name: custom_compute_role.py
   - path: ./../../py_templates/cloud_iam/roles/custom_storage_role.py
     name: custom_storage_role.py
-  #- path: ./../../py_templates/cloud_iam/roles/custom_cloud_sql_connect_role.py
-  #  name: custom_cloud_sql_connect_role.py
   # IAM Service Accounts
   - path: ./../../py_templates/cloud_iam/service_accounts/compute_service_account.py
     name: compute_service_account.py
@@ -52,8 +50,6 @@ resources:
       roleId: qubole_custom_compute_role_acc422_9
       title: qubole_custom_compute_role
       description: qubole_custom_compute_role
-  #- name: custom_cloud_sql_connect_role
-  #  type: custom_cloud_sql_connect_role.py
   # IAM Service Accounts
   - name: qu_compute_service_account
     type: compute_service_account.py

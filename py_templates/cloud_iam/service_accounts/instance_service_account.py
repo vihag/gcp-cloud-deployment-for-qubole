@@ -1,13 +1,13 @@
-# Qubole Orchestrates Compute Engine VMs on the customer's behalf into "clusters"
+# Creates a Custom Service Account that will be used by Qubole to
+# 1. Provide the VMs with the Instance Service Account for further autoscaling and cluster life cycle management
+# 2. Prove the VMs with credentials to access sensitive resources like GCS Data Buckets and Big Query Datasets without exposing them to Qubole
 #
-# Once Qubole has launched a cluster, it relinquishes control of the cluster to the cluster. The Compute Service Account hands the cluster
-# to an Instance Service Account which is reponsible for Workload Aware Autoscaling as well access to private GCS buckets. For this, Qubole requires a
-# second Service Account called the Instance Service Account
-# This deployment template creates a "Instance Service Account" that can be passed to the clusters
+# This is for the following reason:
+# 1. Qubole uses the custom Instance Role to give clusters self managing capabilities for autoscaling and lifecycle management
+# 2. The Custom Compute Role is bound to the Instance Service Account
 #
-# SA Templates - https://github.com/GoogleCloudPlatform/deploymentmanager-samples/blob/master/examples/v2/project_creation/service-accounts.py
-# Env/Custom Variables - https://cloud.google.com/deployment-manager/docs/configuration/templates/use-environment-variables
-# SA REST Reference - https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts
+# Caveats
+# 1. Ensure that instance service account is IAM authorized to sensitive data buckets and big query datasets if the workloads running on the cluster require access to them
 
 
 """Creates the Instance Service Account to be used by Qubole to autoscale clusters."""

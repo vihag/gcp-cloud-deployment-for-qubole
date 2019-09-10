@@ -1,3 +1,11 @@
+# Creates a Firewall Rule that
+# 1. Allows ingress to the Bastion Host from Qubole's Tunneling NAT
+# 2. Allows ingress to the Bastion Host from the Private Subnet in the Qubole Dedicated VPC
+#
+# This is for the following reason:
+# 1. Qubole Control Plane will talk(e.g. command submissions) to the Qubole Clusters via the Bastion Host
+
+
 """Creates the firewall ingress rules for the Qubole Bastion."""
 
 

@@ -1,11 +1,13 @@
-# Create a notional private subnetwork which will host the Cloud SQL Proxy
-
+# Creates a SubNetwork in the VPC designated to host the Cloud SQL Proxy Process
+#
+# This is for the following reason:
+# 1. This VPC will be Private IP peered with the Cloud SQL instance for security reasons
 
 """ Create a sub-network that will act as the private sub-network hosting the Cloud SQL Proxy. """
 
 
 def GenerateConfig(context):
-    """Creates the network."""
+    """ Create a sub-network that will act as the private sub-network hosting the Cloud SQL Proxy. """
 
     resources = [{
         'name': 'cloud-sql-proxy-subnetwork',

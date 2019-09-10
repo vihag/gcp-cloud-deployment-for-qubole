@@ -1,18 +1,20 @@
-# Qubole keeps all customer data in the customer's GCP project. Nothing comes back to Qubole
-#
-# This data includes
+# Creates a Google Cloud Storage Bucket that will act as the "default location" for the Qubole account
+# Qubole saves
 # 1. Cluster Start/Scale Logs
 # 2. Engine Logs
 # 3. Results
 # 4. Notebooks
 # 5. Py/R environments
+# in this location
 #
-# To be able to store this, Qubole requires a dedicated bucked in GCS henceforth called as "defloc"
-# This template creates such a bucket
+# This is for the following reason:
+# 1. Qubole performs Cluster Lifecycle Management. Which means it terminates idle clusters, downscales VMs to save cost and recreates clusters in catastrophic failures
+# 2. Qubole also makes available the logs, results, command histories, command UIs offline (and indefinetly)
+# 3. Qubole achieves this by storing all the above data in the defloc and loading it when the user requests for it
 #
-# References
-# https://github.com/GoogleCloudPlatform/deploymentmanager-samples/blob/master/community/cloud-foundation/templates/gcs_bucket/gcs_bucket.py
-#
+# Caveats:
+# 1. Deleting content from this location can have unintended consequences on the platform including loss of work and data
+# 2. Consult Qubole Support before moving this location
 
 
 """Creates the Qubole Default Location(defloc)."""

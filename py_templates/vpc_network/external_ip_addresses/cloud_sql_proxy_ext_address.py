@@ -1,4 +1,10 @@
-# Create an Internal IP to be attached to the cloud sql proxy host
+# Creates a Static External IP address for
+# 1. The GCE VM hosting the Cloud SQL Proxy Process
+#
+# This is for the following reason:
+# 1. Right not the proxy process is interacting with the Cloud SQL instance on Public IP, hence the VM needs the IP
+# TODO
+# Once creating Private IP peering is possible via templates, remove this as we do not want the proxy process to have internet access
 
 """Create an External IP to be attached to the cloud sql proxy host."""
 

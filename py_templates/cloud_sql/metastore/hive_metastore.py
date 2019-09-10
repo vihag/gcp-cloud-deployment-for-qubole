@@ -1,20 +1,28 @@
-# Qubole promotes the "Data Lake" architecture.
-# This means, all the data(structured/ unstructured) is placed onto the public cloud's blob storage. This would be GCS in GCP
-# The data is then exposed to end users for easy consumption via a Metastore.
-# Qubole works with a MySQL based Hive Metastore
+# Creates a Cloud SQL Instance to host the Hive Metastore. It
+# 1. Creates a 2nd Gen, MySQL 5.7 instance in the specified region and zone
+# 2. Creates a database/schema called hive which will act as the Hive Metastore
+# 3. Updates the password for the root user
+# 4. Creates a user called hive_user which will be used by Qubole to access the Hive Metastore
+# 5. Initializes the hive database with the required tables for it to be a functional Hive Metastore
 #
-# This template will spin up a MySQL based CloudSQL instance, with private IP link to the Qubole Dedicated VPC
+# This is for the following reason:
+# 1. Qubole requires a Hive Metastore configured for the account so that the engines can be seamlessly integrated with the metastore
+# 2. Qubole provides a hosted metastore, but more often than not, for security and scalability reasons, customers will want to host their own metastore
 #
-# Further, it will initialize the CloudSQL instance with a Database called HIVE, and populate the required tables for it to function as a metastore
-# Further, it will initialize a user of this database with appropriate credentials for Qubole to connect to it securely
-#
-# References
-# https://github.com/GoogleCloudPlatform/deploymentmanager-samples/tree/master/examples/v2/cloudsql_import
-# https://github.com/GoogleCloudPlatform/deploymentmanager-samples/blob/master/examples/v2/cloudsql/cloudsql.jinja
-# https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/instances/import
-# https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/instances/insert
-#
-# Requires Service Networking API
+# Caveats:
+# 1. Given the networking architecture of Cloud SQL, there are two possibilities of connecting.
+#       i. Public IP networking
+#            - this requires that we whitelist an external IP to be able to access the Cloud SQL instance
+#            - this creates a problem for Qubole as we need to whitelist an entire subnetwork(private subnetwork) to the CloudSQL instance.
+#            - in this case, the solution is to setup Google's Cloud SQL proxy infront of the Cloud SQL instance. Since the proxy is hosted on either GCE or GKS, we can not whitelist the subnets
+#       ii. Private IP networking
+#            - with Private IP networking, we are limited to setting up the private IP networking with one and only one VPC.
+#            - the standard pattern hence would be setting up a VPC with a Cloud SQL proxy and setting up private IP networking between them
+#            - this opens the possibility of peering Qubole's VPC with the VPC of the proxy and transitively getting access to the Cloud SQL instance
+#            - the private IP method is faster and more secure
+#            - However, since Service Networking API is not available for Cloud Deployment Manager, we can't setup Private IP perring in this template
+#            TODO keep an eye out on when Service Networking becomes a publicly available gcp type and remove the public IP peering between this metastore and the proxy
+
 def GenerateConfig(context):
     """Creates the MySQL based Hive Metastore."""
 

@@ -1,14 +1,12 @@
-# Qubole Orchestrates Compute Engine VMs on the customer's behalf into "clusters"
-# Qubole saves all audit, logs, results, notebooks, environments onto a Qubole designated bucket in the customer's project
+# Creates a Custom Role to work with Google Cloud Storage to
+# 1. To save logs, results and command histories for clusters and queries
+# 2. To save notebooks and virtual environments for when clusters terminate and are brought back online
 #
-# To be able to do so, Qubole requires Storage IAM credentials on a desginated bucket
-# This deployment template creates a "Storage Role" that can be passed to Qubole
+# This is for the following reason:
+# 1. Qubole periodically syncs all logs, results and resources to GCS so that in case of service outages or cluster terminations, the resources are still available
 #
-# It is important to not be more restrictive than the permissions listed in this template
-#
-# Role Templates - https://cloud.google.com/iam/docs/maintain-custom-roles-deployment-manager
-# Env/Custom Variables - https://cloud.google.com/deployment-manager/docs/configuration/templates/use-environment-variables
-#
+# Caveats:
+# 1. The customer should ensure that the listed permissions are not taken away as it might result in loss of functionality
 
 
 """Creates the Storage IAM Role to be used by Qubole to save activities onto GCS."""

@@ -3,17 +3,16 @@
 # 2. Service Account Token Creator Role
 # on the Compute Service Service Account
 #
-# This is required so that once Qubole assume the CS role, create a cluster, and if possible create tokens to access other services,
-#
-# References
-# https://github.com/GoogleCloudPlatform/deploymentmanager-samples/issues/94
-# https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts/setIamPolicy
-# https://cloud.google.com/iam/reference/rest/v1/Policy
+# This is for the following reason:
+# 1. The compute service account is used to initialize the cluster minimum configuration
+# 2. Qubole creates a service account for every customer Qubole account - this is the Qubole Service Account
+# 3. Once the Qubole Service Account is authorized to use the compute service account, it uses it to initialize the cluster minimum configuration
+# 4. Service Account Credentials expire every 1 hour, hence Qubole Service Account requires token creator roles to be able to perform administrative tasks on the cluster
 
-"""Authorizes the Instance Service Account as a user to the Instance Service Account."""
+"""Authorizes the Qubole Service Account as a Service Account User & Service Account Token Creator to the Compute Service Account."""
 
 def GenerateConfig(context):
-    """Authorize the ISA with serviceAccountUser and serviceAccountTokenCreator on ISA."""
+    """Authorizes the Qubole Service Account as a Service Account User & Service Account Token Creator to the Compute Service Account."""
 
     resources = [
         {

@@ -1,18 +1,17 @@
-# Authorize Compute Service Account and Instance Service Account to use
-# 1. Qubole Custom Compute Role
+# Authorizes the Compute Service Account & Instance Service account (created for Qubole) with
+# 1. A custom storage role that allows working with Google Cloud Storage Buckets
 #
+# This is for the following reason:
+# 1. Qubole uses the Compute Service Account to write logs, results to the Cloud Storage. The Instance Service Account to read data buckets through the engines. This requires Storage Permissions.
 #
-# This is required so that once Qubole can use this role and its permissions to work with the compute engine in the customers GCP org,
-#
-# References
-# https://github.com/GoogleCloudPlatform/deploymentmanager-samples/issues/94
-# https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts/setIamPolicy
-# https://cloud.google.com/iam/reference/rest/v1/Policy
+# Caveats:
+# 1. It is the customers responsibility to authorize the custom storage role to the Instance Service Account  on the buckets that need to be accessed via the Qubole Clusters
 
-"""Authorizes the Instance Service Account as a user to the Instance Service Account."""
+
+"""Authorizes the Compute Service Account and Instance Service Account to be able to use the Custom Storage Role."""
 
 def GenerateConfig(context):
-    """Authorize the ISA with serviceAccountUser and serviceAccountTokenCreator on ISA."""
+    """Authorizes the Compute Service Account and Instance Service Account to be able to use the Custom Storage Role."""
 
     resources = [
         {

@@ -2,24 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92de7bcb-3ecb-47dd-952b-104c0a16260d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/configurations/networking-setup/networking-setup.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_svc_accounts_on_defloc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/bind_compute_role_to_svc_accounts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/bind_storage_role_to_svc_accounts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/py_templates/compute_engine/bastion_for_qubole/qubole_bastion.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses/qubole_bastion_ext_address.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/py_templates/vpc_network/firewall_rules/qubole_bastion_ingress.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/private_subnetwork.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/public_subnetwork.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/qubole_dedicated_vpc_network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configurations/account-setup/account-setup.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configurations/account-setup/account-setup.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/isa_self_iam_bind.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_csa_isa_on_isa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_cloud_proxy_svc_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_cloud_proxy_svc_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_csa_isa_on_isa.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_csa_isa_on_isa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_qsa_on_csa.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_qsa_on_csa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_svc_accounts_on_big_query.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_svc_accounts_on_big_query.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/bind_compute_role_to_svc_accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/bind_compute_role_to_svc_accounts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/bind_storage_role_to_svc_accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/bind_storage_role_to_svc_accounts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/roles/custom_cloud_sql_connect_role.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/roles/custom_compute_role.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/roles/custom_compute_role.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/roles/custom_storage_role.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/roles/custom_storage_role.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/service_accounts/cloud_sql_proxy_service_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/service_accounts/cloud_sql_proxy_service_account.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/service_accounts/compute_service_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/service_accounts/compute_service_account.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/py_templates/cloud_iam/service_accounts/instance_service_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/service_accounts/instance_service_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/cloud_sql/metastore/hive_metastore.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_sql/metastore/hive_metastore.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/py_templates/cloud_storage/qubole_defloc/qubole_defloc.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_storage/qubole_defloc/qubole_defloc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/qubole-dedicated-vpc-network.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/cloud_iam/iam_bindings/auth_qsa_on_csa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/compute_engine/bastion_for_qubole/qubole_bastion.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/compute_engine/bastion_for_qubole/qubole_bastion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/compute_engine/cloud_sql_proxy_for_metastore/cloud_sql_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/compute_engine/cloud_sql_proxy_for_metastore/cloud_sql_proxy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/networking_services/cloud_nat/nat_for_qubole_clusters.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/networking_services/cloud_nat/nat_for_qubole_clusters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses/cloud_sql_proxy_ext_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses/cloud_sql_proxy_ext_address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses/cloud_sql_proxy_int_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses/cloud_sql_proxy_int_address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses/cloudsql_int_address_range.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses/cloudsql_int_address_range.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses/qubole_bastion_ext_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses/qubole_bastion_ext_address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/firewall_rules/cloud_sql_proxy_ingress.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/firewall_rules/cloud_sql_proxy_ingress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/firewall_rules/qubole_bastion_ingress.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/firewall_rules/qubole_bastion_ingress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/networks/cloud_sql_proxy_subnetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/cloud_sql_proxy_subnetwork.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/networks/cloud_sql_proxy_vpc_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/cloud_sql_proxy_vpc_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/networks/private_subnetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/private_subnetwork.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/networks/public_subnetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/public_subnetwork.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/networks/qubole_dedicated_vpc_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/networks/qubole_dedicated_vpc_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/peering/enable_service_networking.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/peering/enable_service_networking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_templates/vpc_network/peering/peer_cloud_sql_proxy_qubole_vpc.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_templates/vpc_network/peering/peer_cloud_sql_proxy_qubole_vpc.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,19 +62,22 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/configurations/networking-setup" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/py_templates/cloud_iam/roles" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/configurations/networking-setup" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/py_templates/networking_services" />
       <recent name="$PROJECT_DIR$/py_templates/vpc_network/networks" />
       <recent name="$PROJECT_DIR$/py-templates/cloud-iam/roles" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/py_templates/cloud_iam/roles" />
+      <recent name="$PROJECT_DIR$/py_templates/vpc_network/external_ip_addresses" />
+      <recent name="$PROJECT_DIR$/configurations/networking-setup" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -99,7 +117,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

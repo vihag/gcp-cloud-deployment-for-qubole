@@ -1,13 +1,13 @@
-# Qubole Orchestrates Compute Engine VMs on the customer's behalf into "clusters"
+# Creates a Custom Service Account that will be used by Qubole to
+# 1. Get access to the custom compute role for creating the cluster minimum configuration
+# 2. Provide the VMs with the Instance Service Account for further autoscaling and cluster life cycle management
 #
-# To create and launch "Clusters", Qubole requires Compute IAM credentials
-# This deployment template creates a "Compute Service Account" that can be passed to Qubole
+# This is for the following reason:
+# 1. Qubole uses the custom Compute Role to list networks, create vms, create addresses, tag instances and pass IAM service accounts to other instances
+# 2. The Custom Compute Role is bound to the Compute Service Account and hence made available to Qubole
 #
-# SA Templates - https://github.com/GoogleCloudPlatform/deploymentmanager-samples/blob/master/examples/v2/project_creation/service-accounts.py
-# Env/Custom Variables - https://cloud.google.com/deployment-manager/docs/configuration/templates/use-environment-variables
-# SA REST Reference - https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts
-# IAM Bindings to add roles: https://stackoverflow.com/a/55961393/7194982
-# Making references in templates: https://cloud.google.com/deployment-manager/docs/configuration/use-references?hl=ru#making_references_in_templates
+# Caveats
+# 1. Ensure that this service account does not have IAM permissions to sensitive resources like GCS data buckets or Big Query Read permissions.
 
 
 """Creates the Compute Service Account to be used by Qubole to create and launch clusters."""
