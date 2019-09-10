@@ -54,7 +54,7 @@
     All the templates are python templates in the py_templates folder. Each template has detailed documentation on its purpose in life and its use to the Qubole deployment
     The deployment configurations are in the configurations folder.
 </p>
-<p>
+
     The configurations are divided into two sections
     1. The account setup which will
         i. Setup a custom compute role with minimum compute permissions
@@ -72,8 +72,8 @@
         iii. Setup a Cloud SQL Instance hosting the Hive Metastore, exposed via a Cloud SQL Proxy Service
         iv. Peer the Cloud SQL Proxy VPC to the Qubole Dedicated VPC for secure access
         iv. Whitelist Bastion ingress and private subnet ingress to the Cloud SQL Proxy Service
-</p>
-<p>
+
+
     1. Setup the account IAM as follows
         `gcloud --verbosity=warning deployment-manager deployments create deployment-qubole-account --config account-setup.yaml`
     2. Update your Qubole Account with the newly minted
@@ -91,6 +91,6 @@
         i. VPC network name
         ii. Private Subnetwork name
         iii. External IP of the bastion host
-</p>
+
 
 <p>That's all folks</p>
