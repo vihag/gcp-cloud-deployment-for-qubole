@@ -48,7 +48,10 @@
     2. Create a GCE VM and run Cloud SQL Proxy on it, creating a proxy connection to the Cloud SQL instance
     3. Additionally, the templates will whitelist the private subnet and bastion host to be able to access the Cloud SQL Proxy
 </p>       
-        
+
+<h2>How does the integration look like?</h2>
+![Alt text](./readme_files/qubole_gcp_integration?raw=true "Qubole GCP Integration Reference Architecture")
+
 <h2>How to use the project?</h2>
 <p>
     All the templates are python templates in the py_templates folder. Each template has detailed documentation on its purpose in life and its use to the Qubole deployment
