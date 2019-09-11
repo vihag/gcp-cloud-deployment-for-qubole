@@ -50,7 +50,9 @@
 </p>       
 
 <h2>How does the integration look like?</h2>
-![Alt text](./readme_files/qubole_gcp_integration?raw=true "Qubole GCP Integration Reference Architecture")
+<p>
+    <img src="./readme_files/qubole_gcp_integration" title="Qubole GCP Integration Reference Architecture">
+</p>
 
 <h2>How to use the project?</h2>
 <p>
