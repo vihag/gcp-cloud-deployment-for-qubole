@@ -51,7 +51,7 @@
 
 <h2>How does the integration look like?</h2>
 <p>
-    <img src="./readme_files/qubole_gcp_integration" title="Qubole GCP Integration Reference Architecture">
+    <img src="./readme_files/qubole_gcp_integration.png" title="Qubole GCP Integration Reference Architecture">
 </p>
 
 <h2>How to use the project?</h2>
