@@ -57,8 +57,8 @@ resources:
     properties:
       zone: asia-southeast1-a
       machineType: f1-micro
-      public_ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCuNs16ilK2zat5dNN6oPqxcD1xYhzZiS1/g7LMYxAO3Bhm712ZR1Uc7LMICLqk8CeI8Ji7g3yqRaHZEkl8YiGS6JAEGOXBMKQdHBQVlyQR8CTiKB4+PxlNQuCjsP/e+mVtS/QwuLno+qTO5HAAcSmgsNNJn4R4zfuRMK7Lo1zv0ZYyxWrRQ/Oo/A8FBEoiNvsPhoG9TBWR4YbLkxWh9hR0TIsCdtMz1TPqBKe7bKg7onHUKIh1vByT8nzzim6F3WBHoeWYnpyuYVcQi2XHWQTVbZ/g/Xi85LsUxfBeggo02pE1WkRufFQ3Aa4ddZJH8b6u5pSIBbt2l7Ay5NZg538v
-      qubole_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS6HgK+J0m8Q+Zn6MZVwYNSWI3d8vD1Z0CDt+aHg4oz7CSUH4hZ2U1pJMsmu5+ntz8OWsGW7MBpDjrzMQAG2nnKtKmKNXAAOwUxhP1If5ZZfEGocysu/OkFnXti6F3z61aTioU8CqQ6IojNCudI7cL+TE+jN2G+AJ/MF9BaqUhOzBUbePOgxGMcpIdh3iDrVU4tATMJx7i4CrAXDK4KKWcQzCP0fYQnS/Vg05Zz4MJiE8CBM/WbRNIFPJHYlWzbZv8SfPPhJzi/4k1Y0wwgMBEw03uMZ+iAtgVaDPxOshklBz4IZ3RKq9Gsm1CyWHJwB2Nb4lIV2RQcb8sQUQNCwU1 canopykey
+      public_ssh_key: <retreive-from-account>
+      qubole_public_key: <retreive-from-account>
   - name: cloud_sql_proxy
     type: cloud_sql_proxy.py
     properties:
