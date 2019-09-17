@@ -1,0 +1,51 @@
+imports:
+  # Hive Metastore
+  - path: ./templates/hive_metastore_integration.py
+    name: account_hive_integration.py
+  # Force Import the rest of the templates
+  - path: ./templates/gcp_compute_address_cloud_sql_proxy_ext.py
+    name: gcp_compute_address_cloud_sql_proxy_ext.py
+  - path: ./templates/gcp_compute_address_cloud_sql_proxy_int.py
+    name: gcp_compute_address_cloud_sql_proxy_int.py
+  - path: ./templates/gcp_compute_address_cloudsql_int_range.py
+    name: gcp_compute_address_cloudsql_int_range.py
+  - path: ./templates/gcp_compute_firewall_cloud_sql_proxy_ingress.py
+    name: gcp_compute_firewall_cloud_sql_proxy_ingress.py
+  - path: ./templates/gcp_compute_instance_cloud_sql_proxy.py
+    name: gcp_compute_instance_cloud_sql_proxy.py
+  - path: ./templates/gcp_compute_network_cloud_sql_proxy.py
+    name: gcp_compute_network_cloud_sql_proxy.py
+  - path: ./templates/gcp_compute_subnetwork_cloud_sql_proxy_subnet.py
+    name: gcp_compute_subnetwork_cloud_sql_proxy_subnet.py
+  - path: ./templates/gcp_iam_binding_cloud_proxy_svc_account.py
+    name: gcp_iam_binding_cloud_proxy_svc_account.py
+  - path: ./templates/gcp_iam_sa_cloud_sql_proxy.py
+    name: gcp_iam_sa_cloud_sql_proxy.py
+  - path: ./templates/gcp_service_networking_enable_on_proxy.py
+    name: gcp_service_networking_enable_on_proxy.py
+  - path: ./templates/gcp_sql_db_hive_metastore.py
+    name: gcp_sql_db_hive_metastore.py
+  - path: ./templates/gpc_compute_network_peering_sql_proxy_qubole_vpc.py
+    name: gpc_compute_network_peering_sql_proxy_qubole_vpc.py
+
+resources:
+  # Account Integration
+  - name: qubole_hive_integration
+    type: account_hive_integration.py
+    properties:
+      project: qubole-on-gcp
+      deployment-suffix: suf2
+      region: asia-southeast1
+      zone: asia-southeast1-a
+      proxy-vm-type: f1-micro
+      db_tier: db-n1-standard-1
+      db_root_password: root_password!23
+      hive_user_name: hive_user
+      hive_user_password: hive_user_password!23
+      hive_schema_file: gs://vihag-public-artifacts/hive-schema-2.1.0-no-txn.mysql.sql
+      qubole_vpc_subnet_cidr: 10.3.0.0/24
+      qubole-dedicated-vpc: qubole-dedicated-vpc
+      qubole_bastion_networkIP: 10.2.0.2
+
+
+

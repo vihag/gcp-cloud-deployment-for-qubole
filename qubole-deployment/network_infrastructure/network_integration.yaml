@@ -1,0 +1,32 @@
+imports:
+  # Network Integration
+  - path: ./templates/network_integration.py
+    name: network_integration.py
+  # Force Import the rest of the templates
+  - path: ./templates/gcp_compute_address_qubole_bastion_ext.py
+    name: gcp_compute_address_qubole_bastion_ext.py
+  - path: ./templates/gcp_compute_firewall_qubole_bastion_ingress.py
+    name: gcp_compute_firewall_qubole_bastion_ingress.py
+  - path: ./templates/gcp_compute_instance_qubole_bastion.py
+    name: gcp_compute_instance_qubole_bastion.py
+  - path: ./templates/gcp_compute_nat_qubole_priv_subnet.py
+    name: gcp_compute_nat_qubole_priv_subnet.py
+  - path: ./templates/gcp_compute_network_qubole_dedicated_vpc.py
+    name: gcp_compute_network_qubole_dedicated_vpc.py
+  - path: ./templates/gcp_compute_subnetwork_qubole_priv_subnet.py
+    name: gcp_compute_subnetwork_qubole_priv_subnet.py
+  - path: ./templates/gcp_compute_subnetwork_qubole_pub_subnet.py
+    name: gcp_compute_subnetwork_qubole_pub_subnet.py
+
+resources:
+  # Network Integration
+  - name: qubole_network_integration
+    type: network_integration.py
+    properties:
+      project: qubole-on-gcp
+      deployment-suffix: suf2
+      region: asia-southeast1
+      zone: asia-southeast1-a
+      bastion-vm-type: f1-micro
+      public_ssh_key: <get from account>
+      qubole_public_key: <get from account>

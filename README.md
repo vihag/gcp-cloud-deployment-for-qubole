@@ -31,7 +31,8 @@
         * NAT Gateways
     * Hive Metastore
     
-    That said, The purpose of this project is two-fold
+    That said, The purpose of this project is two-fold,
+    Using the DRY principle promoted by GCP Cloud Deployment Manager, create re-usable, customizable modules that
     1. Create IAM Roles, Service Accounts and Policies that 
         i. Allow Qubole to Create Clusters and perform complete life cycle management
         ii. Allow the clusters to write audit data, command logs/results/resources onto Google Cloud Storage
@@ -60,42 +61,37 @@
     The deployment configurations are in the configurations folder.
 </p>
 
-    The configurations are divided into two sections
-    1. The account setup which will
-        i. Setup a custom compute role with minimum compute permissions
-        ii. Setup a custom storage role with minimum storage permissions
-        iii. Setup a service account that will act as the Compute Service Account
-        iv. Setup a service account that will act as the Instance Service Account
-        v. Authorize the Qubole Service Account to be able to use the Compute Service Account
-        vi. Authorize the Compute Service Account to be able to use the Instance Service Account
-        vii. Authorize the Service Accounts to be able to read Big Query Datasets
-        viii. Create a Cloud Storage Bucket which will be the account's Default Location
-    2. The infrastructure setup which will
-        i. Setup a VPC Network with a public and private subnet
-        ii. Setup a Bastion host in the public subnet and whitelist Qubole ingress to it
-        iii. Setup a Cloud NAT to allow clusters spun up in the private subnet access to the internet
-        iii. Setup a Cloud SQL Instance hosting the Hive Metastore, exposed via a Cloud SQL Proxy Service
-        iv. Peer the Cloud SQL Proxy VPC to the Qubole Dedicated VPC for secure access
-        iv. Whitelist Bastion ingress and private subnet ingress to the Cloud SQL Proxy Service
-
-
-    1. Setup the account IAM as follows
-        `gcloud --verbosity=warning deployment-manager deployments create deployment-qubole-account --config account-setup.yaml`
-    2. Update your Qubole Account with the newly minted
-        i. Compute Service Account
-        ii. Instance Service Account
-        iii. Default Location
-    3. Setup the rest of the infrastructure as follows
-        `gcloud --verbosity=warning deployment-manager deployments create deployment-qubole-infra --config infrastructure-setup.yaml`
-    4. Update your Qubole Account with configuration for connecting to the metastore. You will need the newly minted
-        i. Internal IP of the GCE hosting the cloud SQL proxy service
-        ii. Credentials of the Hive Metastore user
-        iii. External IP of the bastion host
-        iv. User Name of the user allowed to be accessed by Qubole
-    5. Create new clusters in your Qubole Account. You will need the newly minted
-        i. VPC network name
-        ii. Private Subnetwork name
-        iii. External IP of the bastion host
-
+        There are 3 modules
+        1. The account_integration module
+            i. Setup a custom compute role with minimum compute permissions
+            ii. Setup a custom storage role with minimum storage permissions
+            iii. Setup a service account that will act as the Compute Service Account
+            iv. Setup a service account that will act as the Instance Service Account
+            v. Authorize the Qubole Service Account to be able to use the Compute Service Account
+            vi. Authorize the Compute Service Account to be able to use the Instance Service Account
+            vii. Authorize the Service Accounts to be able to read Big Query Datasets
+            viii. Create a Cloud Storage Bucket which will be the account's Default Location
+        2. The network_infrastructure module
+            i. Setup a VPC Network with a public and private subnet
+            ii. Setup a Bastion host in the public subnet and whitelist Qubole ingress to it
+            iii. Setup a Cloud NAT to allow clusters spun up in the private subnet access to the internet
+        3. The hive_metastore module
+            i. Setup a Cloud SQL Instance hosting the Hive Metastore, exposed via a Cloud SQL Proxy Service
+            ii. Peer the Cloud SQL Proxy VPC to the Qubole Dedicated VPC for secure access
+            iii. Whitelist Bastion ingress and private subnet ingress to the Cloud SQL Proxy Service
+            iv. Setup Private IP connection between the SQL proxy and the Cloud SQL instance for maximum security and performance
+    
+    
+        Deploy the modules as follows
+        1. Navigate to the qubole-deployment folder
+        2. Navigate to the account_integration folder
+            2.1 Edit the yaml file to change any variables you wish
+            2.2 Run 'sudo gcloud --verbosity=warning deployment-manager deployments create deployment-qubole-account-integration --config account_integration.yaml'
+        3. Navigate to the network_infrastructure folder
+            3.1 Edit the yaml file to change any variables you wish
+            3.2 Run 'sudo gcloud --verbosity=warning deployment-manager deployments create deployment-qubole-network-integration --config network_integration.yaml'
+        4. Navigate to the hive_metastore folder
+            4.1 Edit the yaml file to change any variables you wish. Some of the variables will depend on the output of Step 3
+            4.2 Run 'sudo gcloud --verbosity=warning deployment-manager deployments create deployment-qubole-hive-metastore-integration --config hive_metastore_integration.yaml'
 
 <p>That's all folks</p>
