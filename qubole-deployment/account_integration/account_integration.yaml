@@ -1,0 +1,35 @@
+imports:
+  # Account Integration
+  - path: ./templates/account_iam_integration.py
+    name: account_iam_integration.py
+  # Force Import the rest of the templates
+  - path: ./templates/gcp_iam_binding_auth_svc_accounts_on_big_query.py
+    name: gcp_iam_binding_auth_svc_accounts_on_big_query.py
+  - path: ./templates/gcp_iam_binding_compute_role_to_svc_accounts.py
+    name: gcp_iam_binding_compute_role_to_svc_accounts.py
+  - path: ./templates/gcp_iam_binding_storage_role_to_svc_accounts.py
+    name: gcp_iam_binding_storage_role_to_svc_accounts.py
+  - path: ./templates/gcp_iam_policy_auth_csa_isa_on_isa.py
+    name: gcp_iam_policy_auth_csa_isa_on_isa.py
+  - path: ./templates/gcp_iam_policy_auth_qsa_on_csa.py
+    name: gcp_iam_policy_auth_qsa_on_csa.py
+  - path: ./templates/gcp_iam_role_custom_compute_role.py
+    name: gcp_iam_role_custom_compute_role.py
+  - path: ./templates/gcp_iam_role_custom_storage_role.py
+    name: gcp_iam_role_custom_storage_role.py
+  - path: ./templates/gcp_iam_sa_compute_service_account.py
+    name: gcp_iam_sa_compute_service_account.py
+  - path: ./templates/gcp_iam_sa_instance_service_account.py
+    name: gcp_iam_sa_instance_service_account.py
+  - path: ./templates/gcp_storage_bucket_qubole_defloc.py
+    name: gcp_storage_bucket_qubole_defloc.py
+
+resources:
+  # Account Integration
+  - name: qubole_account_iam_integration
+    type: account_iam_integration.py
+    properties:
+      project: qubole-on-gcp
+      qubole-service-account: <get from account>
+      deployment-suffix: suf2
+
